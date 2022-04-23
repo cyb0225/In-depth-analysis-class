@@ -29,7 +29,7 @@ void travelClass() {
     /* 这里先把指针转成第一个元素的类型, +1 跳到第二个元素的位置，再转化成第二个元素的类型
     但是这里打印出来居然是0， 这也和y的值不一样啊， 这里其实是因为内存补齐的问题， int后面补齐了4位，
     所以我们现在访问的内存只用到y的前四位和空的4位，这里， p应该先转化补齐块的大小再进行 + 1*/
-    printf("false tmp.y = %lf\n", *(double*)((int*)p + 1)); 
+    printf("false tmp.y = %lf\n", *(double*)((int*)p + 1));  
 
     printf("true tmp.y = %lf\n", *(double*)((double*)p + 1)); // 这样就正确了， 同时也证明了前面内存补齐的猜想
 
